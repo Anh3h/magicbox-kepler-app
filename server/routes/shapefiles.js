@@ -10,6 +10,7 @@ router.get('/countries', (req, res) => {
 
 router.get('/countries/:countryCode/:adminLevel', (req, res) => {
   let getHealthSites = (req.query.healthsites == 'true');
+  let getSchoolData = (req.query.schools == 'true');
   const fileName = `${req.params.countryCode}_${req.params.adminLevel}.json`;
   helperShapefile.sendCountryShapefile(fileName)
     .then(shapedata => {

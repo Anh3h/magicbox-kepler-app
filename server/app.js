@@ -7,6 +7,7 @@ const maps = require('./routes/maps');
 const index = require('./routes/index');
 const shapefiles = require('./routes/shapefiles');
 const samples = require('./routes/samples');
+const schools = require('./routes/schools');
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({ limit: '250mb', extended: true }));
 app.use('/api/maps', maps);
 app.use('/api/samples', samples);
 app.use('/api/shapefiles', shapefiles);
+app.use('/api/schools', schools);
 
 app.use('/', index);
 
